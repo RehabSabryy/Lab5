@@ -1,0 +1,110 @@
+Report:
+First Question:	Abstract VS interface 
+---------------------------------------
+1-	Abstraction 
+----------------
+Abstraction is one of the core concepts of Object-Oriented Programming.
+Abstraction is the process of hiding the internal details of an application from the outer world, 
+It allows us to simplify complex systems by focusing on essential details
+and hiding internal workings.
+Abstraction is used to describe things in simple terms. 
+It’s used to create a boundary between the application and the client programs.
+Abstract must use keyword abstract.
+There are two types of abstraction:
+1.	Data Abstraction
+2.	Process Abstraction
+
+        Data Abstraction:
+        ------------------
+            Data Abstraction is When the object data is not visible to the outer world, 
+            it creates data abstraction. If needed, access to the Objects’ data is provided
+             through some methods.
+
+        Process Abstraction:
+        --------------------
+            We don’t need to provide details about all the functions of an object. 
+            When we hide the internal implementation of the different functions involved
+             in a user operation, it creates process abstraction.
+            In conclusion, Abstraction is a powerful tool in OOP that allows us to create more robust,
+             maintainable, and efficient software. 
+             By focusing on essential details and hiding unnecessary complexity,
+              abstraction enables developers to build large and complex systems that are easier to
+               understand, use, and modify.
+-----------------------------------------------------------------------------------------------
+2-Interface
+-------------
+An interface is a  blueprint or contract between itself and any class that implements it.
+ Interface can have methods, properties, or events. 
+It acts as a guide for developers ensuring that different objects within a program
+ share a consistent set of behaviors and specifications.
+An interface is a programming structure/syntax that allows the computer to enforce
+ certain properties on an object (class). Interface must use implements keyword.
+
+Types of Interfaces:
+---------------------
+    1.	Functional Interface
+    2.	Marker interface
+
+         Functional Interface:
+        	Functional Interface is an interface that has only pure one abstract method.
+        	Examples: ActionListener : It contains only  actionPerformed()
+        	ItemListener : It contains only  itemStateChanged() method
+
+        Marker Interface:
+            An interface that does not contain any methods, fields, Abstract Methods,
+            and any Constants is Called a Marker interface.
+            Also, if an interface is empty, then it is known as Marker Interface.
+
+    There are two alternatives to the marker interface that produce the same result
+     as the marker interface.
+        1- Internal Flags – It is used in the place of the Marker interface to implement
+         any specific operation.
+        2- Annotations – By applying annotations to any class, we can perform specific actions on it.
+
+
+
+    To conclude
+     Interfaces are similar to abstract classes.
+     The difference between interfaces and abstract classes are:
+    •	Interfaces cannot have properties, while abstract classes can.
+    •	All interface methods must be public, while abstract class methods are public or protected
+    •	All methods in an interface are abstract, so they cannot be implemented in code
+         and the abstract keyword is not necessary.
+    •	Classes can implement an interface while inheriting from another class at the same time.
+-----------------------------------------------------------------------------------------------------
+
+Second Question:	Inheritance in function constructor
+--------------------------------------------------------
+ 
+Inheritance in function constructors in JavaScript allows you to create
+ new objects based on existing ones,
+ inheriting their properties and methods.
+ Inheritance can be achieved using constructor functions and the prototype property.
+ It's a way to reuse code and build complex object structures.
+  
+In the case of function constructors, inheritance can be achieved using the prototype chain.
+This is the most common and recommended approach,where an object can access properties and methods
+ not directly defined on itself but available on its prototype, its parent's prototype
+function constructors inheritance is generally preferred for its simplicity and flexibility.
+
+Example:
+--------
+
+
+function Person(name, age, gender) { 
+    this.name = name; 
+    this.age = age; 
+    this.gender = gender; 
+}; 
+function Employee(name, age, gender, id) { 
+  
+    // Calling Employee constructor function 
+    Person.call(this, name, age, gender); 
+    //add a new parameter
+    this.id=id;
+    
+}
+let Person = new Person("Rehab", 23, "Female"); 
+let Employee = new Employee("Rehab", 23, "Female", 100); 
+console.log(Person)
+console.log(Employee); 
